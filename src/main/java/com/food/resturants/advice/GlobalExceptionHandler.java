@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	Map<String, String> entityValidation(MethodArgumentNotValidException ex) {
-
+		log.info("inside entity validation for resturant service");
 		Map<String, String> errMap = new HashMap<>();
 
 		ex.getBindingResult().getAllErrors().forEach(err -> {
