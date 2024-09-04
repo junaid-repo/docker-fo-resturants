@@ -25,7 +25,7 @@ public class Utility {
 		Map<String, String> locationDetails = new HashMap<>();
 		String location;
 		String ipAddress = getIp();
-		String url = "http://ip-api.com/json/" + getIp();
+		String url = "http://ip-api.com/json/49.37.75.8";
 		URL whatismylocation = new URL(url);
 		BufferedReader in = new BufferedReader(new InputStreamReader(whatismylocation.openStream()));
 

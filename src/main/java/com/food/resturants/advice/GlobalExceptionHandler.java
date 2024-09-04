@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	Map<String, String> entityValidation(MethodArgumentNotValidException ex) {
-		log.info("inside entity validation for resturant service");
+		log.info("inside entity validation for resturant services");
 		Map<String, String> errMap = new HashMap<>();
 
 		ex.getBindingResult().getAllErrors().forEach(err -> {
